@@ -1,0 +1,9 @@
+Проект: demo-project
+Дата: Вс 04 окт 2026 18:38:45 MSK
+Папка src: создана
+Папка docs: создана
+Папка data: создана
+Файлы проекта:
+demo-project/README.md
+demo-project/src/main.sh
+Всего файлов: 2
