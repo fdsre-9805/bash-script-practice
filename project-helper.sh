@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Настройки: имя проекта из первого аргумента, папка и файл отчёта
 PROJECT_NAME="$1"
 REPORT_DIR="reports"
 OUTPUT_FILE="$REPORT_DIR/result.txt"
 
-# Спрашивает имя проекта, если оно не передано; при пустом имени завершает скрипт
 check_project_name() {
   if [ -z "$PROJECT_NAME" ]; then
     read -p "Введите имя проекта: " PROJECT_NAME
@@ -17,7 +15,6 @@ check_project_name() {
   fi
 }
 
-# Создаёт папку отчёта, папку проекта с подпапками и файлы
 create_structure() {
   mkdir -p "$REPORT_DIR"
 
@@ -29,7 +26,6 @@ create_structure() {
   echo "Проект $PROJECT_NAME" > "$PROJECT_NAME/README.md"
 }
 
-# Проверяет, что каждая подпапка создана, и дописывает результат в отчёт
 check_result() {
   for folder in src docs data; do
     if [ -d "$PROJECT_NAME/$folder" ]; then
@@ -40,7 +36,6 @@ check_result() {
   done
 }
 
-# Записывает отчёт: проект, дата, проверка папок, список и количество файлов
 write_report() {
   echo "Проект: $PROJECT_NAME" > "$OUTPUT_FILE"
   echo "Дата: $(date)" >> "$OUTPUT_FILE"
@@ -50,7 +45,6 @@ write_report() {
   echo "Всего файлов: $(find "$PROJECT_NAME" -type f | wc -l)" >> "$OUTPUT_FILE"
 }
 
-# Показывает готовый отчёт в терминале
 show_report() {
   cat "$OUTPUT_FILE"
 }
