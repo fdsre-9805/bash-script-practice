@@ -27,3 +27,7 @@ chmod +x project-helper.sh
 ```bash
 ./project-helper.sh
 ```
+
+## Проверка
+
+![Проверка скрипта в терминале](screenshot.png)
